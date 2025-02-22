@@ -9,44 +9,53 @@ This project implements a simple Naïve Bayes classifier for spam classification
 
 ## Installation
 
-1. **Clone or Download the Repository:**  
-   Download the project files to your local machine.
+1. **Clone the Repository:**  
+   Open a terminal and run:
+
+   ```bash
+   git clone https://github.com/ahmadagah/ML-Bayes-classifier.git
+   cd ML-Bayes-classifier
+   ```
 
 2. **Create a Virtual Environment:**  
-   Open a terminal in the project directory and run:
-   
+   In the project directory, run:
+
    ```bash
    python -m venv venv
    ```
 
+3. **Activate the Virtual Environment:**  
+   - **Windows:**  
 
-Activate the Virtual Environment:
+     ```bash
+     venv\Scripts\activate
+     ```
 
-Windows:
-bash
-Copy
-venv\Scripts\activate
-Linux/Mac:
-bash
-Copy
-source venv/bin/activate
-Install Required Packages:
-A requirements.txt file is provided. Install the necessary packages by running:
+   - **Linux/Mac:**  
 
-bash
-Copy
-pip install -r requirements.txt
-Required packages include: numpy, pandas, seaborn, and matplotlib.
+     ```bash
+     source venv/bin/activate
+     ```
 
-Usage
+4. **Install Required Packages:**  
+   Install the necessary packages using:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+## Usage
+
 After installing the requirements, run the main Python script:
 
-bash
-Copy
+```bash
 python main.py
-This script will load the Spambase dataset, split it into training and test sets (maintaining a 40% spam, 60% not-spam ratio), compute prior probabilities and feature statistics, make predictions using the Gaussian Naïve Bayes classifier, and evaluate the model’s performance (accuracy, precision, recall, and confusion matrix).
+```
 
-Notes
-The classifier uses logarithmic probabilities to avoid numerical underflow.
-The dataset is split 50%-50% (approximately 2300 instances each) while preserving the original class distribution.
-Although Naïve Bayes assumes that features are independent, many features (such as word frequencies) are correlated. Despite this, the model achieves high recall, making it a useful baseline for spam filtering.
+This script loads the Spambase dataset, splits it into training and test sets (maintaining a 40% spam, 60% not-spam ratio), computes prior probabilities and feature statistics, makes predictions using the Gaussian Naïve Bayes classifier, and evaluates the model’s performance (accuracy, precision, recall, and confusion matrix).
+
+## Notes
+
+- The classifier uses logarithmic probabilities to avoid numerical underflow.
+- The dataset is split 50%-50% (approximately 2300 instances each) while preserving the original class distribution.
+- Although Naïve Bayes assumes that features are independent, many features (e.g., word frequencies) are correlated. Despite this, the model achieves high recall, making it a useful baseline for spam filtering.

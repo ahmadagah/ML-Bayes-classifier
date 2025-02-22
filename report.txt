@@ -1,0 +1,39 @@
+Author: AHMAD AGAH
+
+
+
+Spam Classification Report: Gaussian Naïve Bayes
+
+Problem Description
+The goal of this project was to classify emails as spam or not spam using the Spambase dataset from the UCI Machine Learning Repository. A Gaussian Naïve Bayes classifier was implemented, which assumes that features are normally distributed and independent given the class label.
+
+Steps Taken
+
+1.Split the dataset into a training set (50%) and a test set (50%), maintaining a 40% spam and 60% not-spam ratio (approximately 2300 instances each).
+2.Computed the prior probabilities P(spam) and P(not spam).
+3.Calculated the mean and standard deviation for each of the 57 features for both classes, replacing any zero standard deviation with a minimal value.
+4.Used the Gaussian probability density function with log-probabilities to estimate feature likelihoods and prevent underflow errors.
+5.Predicted labels on the test set using the Naïve Bayes decision rule.
+6.Evaluated performance using accuracy, precision, recall, and a confusion matrix, and visualized the confusion matrix as a heatmap.
+
+
+Interpretation of Results
+The model shows high recall (98%), meaning nearly all spam emails are detected—a crucial aspect for spam filtering. However, the low precision (53.84%) indicates many legitimate emails are misclassified as spam, leading to a high false positive rate. Overall accuracy is moderate (66.32%) due to these misclassifications.
+
+Answering Key Questions
+• Are the attributes independent, as assumed by Naïve Bayes?
+The features are not truly independent; many (e.g., word and character frequencies) are correlated. For example, emails containing "free" often also include "win," "money," or "$". Despite this, the cumulative effect of many features helps mitigate the impact of this assumption.
+
+• Does Naïve Bayes perform well despite the independence assumption?
+Yes, the high recall indicates effective spam detection, but the low precision shows it is overly aggressive, resulting in numerous false positives.
+
+• Why Might Naïve Bayes Work Well or Poorly?
+Works Well: Spam emails exhibit distinct patterns (e.g., frequent use of specific words, capitalization, and special characters) and the method is computationally efficient.
+Struggles: The unrealistic independence assumption and inability to capture relationships between words result in high false positive rates.
+
+• Ways to Improve the Model
+1.Adjust the decision threshold to reduce false positives and improve precision.
+2.Use alternative classifiers (e.g., Logistic Regression, SVM, or Neural Networks) that better handle correlated features.
+
+• Conclusion
+Gaussian Naïve Bayes serves as a strong baseline for spam classification. It achieves high recall, ensuring almost all spam is caught, but its low precision means many legitimate emails are misclassified. Although the independence assumption is not fully valid, the overall performance is reasonable given the method’s simplicity and efficiency.
