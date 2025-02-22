@@ -7,6 +7,15 @@
 
 This project implements a simple Naïve Bayes classifier for spam classification using the Spambase dataset from the UCI Machine Learning Repository. The dataset contains 57 continuous features representing word and character frequencies (including capitalization metrics) and 1 binary label (0 for not spam, 1 for spam). The goal is to train the classifier on a training set and evaluate its performance on a test set.
 
+
+
+## Confusion Matrix
+
+Below is the confusion matrix for the Naïve Bayes classifier:
+
+![Confusion Matrix](images/conf_matrix.png)
+
+
 ## Installation
 
 1. **Clone the Repository:**  
